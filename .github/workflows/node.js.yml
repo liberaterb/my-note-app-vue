@@ -24,4 +24,4 @@ jobs:
     - run: npm run build --if-present
     - run: mkdir /tmp/key
     - run: echo '${{ secrets.SSH_KEY }}' > /tmp/key/ssh-key
-    - run: scp -r ./dist/ root@23.105.222.59:/root/www/vue-note -i /tmp/key/ssh-key -p 29064 
+    - run: scp -r ./dist/ root@23.105.222.59:/root/www/vue-note -i /tmp/key/ssh-key -P 29064 
