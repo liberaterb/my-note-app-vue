@@ -24,10 +24,11 @@ jobs:
     - run: npm run build --if-present
 
     - name: deploy file to server
-      uses: wlixcc/SFTP-Deploy-Action@v1.0 
+      uses: wlixcc/SFTP-Deploy-Action@v1.0
       with:  
         username: 'root'   #ssh user name
-        server: '${{ secrets.IP }}' #引用之前创建好的secret
+        server: '23.105.222.59'
+        port: ${{ secrets.IP }}
         ssh_private_key: ${{ secrets.SSH_KEY }} #引用之前创建好的secret
         local_path: './dist/*'  # 对应我们项目build的文件夹路径
-        remote_path: '/root/www/vue-note/'
+        remote_path: '/root/www/vue-note'
